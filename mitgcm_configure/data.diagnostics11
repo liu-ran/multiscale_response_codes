@@ -1,0 +1,93 @@
+# Diagnostic Package Choices
+#
+ &diagnostics_list
+# write pkg diagnostics output to separate subdirectory
+ diagMdsDir = 'Diags'
+
+# 2D diagnostics
+# fields(1:3,1) = 'TRELAX  ','MXLDEPTH', 'ETAN',
+# frequency(1) = 86400.,
+# filename(1) = '2D_diags',
+
+# 3D state variables
+# fields(1:7,2) =   'THETA   ', 'VVEL    ', 'UVEL    ',
+#                   'WVEL    ', 'CONVADJ ', 'PHIHYD  ',
+#		   'RHOAnoma',
+# frequency(2) = 86400.,
+# filename(2) = 'state',
+
+# Heat budget terms
+# fields(1:7,3) = 'ADVx_TH ', 'ADVy_TH ', 'ADVr_TH ',
+#                 'DFxE_TH ', 'DFyE_TH ', 'DFrI_TH ',
+#                 'DFrE_TH ',
+# frequency(3) = 31104000.,
+# filename(3) = 'heat_3D',
+
+# Residual mean flow - Layers Package
+# fields(1:3,4) = 'LaVH1TH ', 'LaHs1TH ', 'LaVa1TH '
+# frequency(4) = 31104000.,
+# fileName(4) = 'layDiag',
+
+# GM diagnostics
+#- Note: comment out this diagnostics list below if useGMRedi=.FALSE.
+#        or you will get warnings messages in STDERR
+# fields(1:2,5) = 'GM_PsiX ', 'GM_PsiY ',
+# frequency(5) = 31104000.,
+# filename(5) = 'GM_diags',
+
+#---------------------------------------
+#- Eddy-permitting run, diagnose vorticity (not computed when using uniform Ah)
+# fields(1:2,6) = 'momVort3', 'momHDiv ',
+# frequency(6) = 31104000.,
+# filename(6) = 'state_vort',
+  filename(19) = 'tracer01_diag',
+  frequency(19) = 432000.,
+  fields(1:40,19) = 'TRAC01', 'UTRAC01', 'VTRAC01',
+                  'WTRAC01', 'DFrITr01', 'ForcTr01',
+		  'DFxETr01','DFyETr01',
+  filename(20) = 'tracer02_diag'
+  frequency(20) = 432000.,
+  fields(1:4,20) = 'TRAC02','WVEL', 'UVEL','VVEL',
+#  filename(21) = 'DiagLAYERS-transport',
+#  frequency(21) = 155520000.,
+#  fields(1,21)= 'LaUH1TH ','LaHw1TH ','LaPw1TH ',
+#                 'LaVH1TH ','LaHs1TH ','LaPs1TH ',
+#  filename(22) = 'DiagLAYERS-diapycnal',
+#  frequency(22) = 155520000.,
+#  fields(1,22)= 'LaTs1TH ','LaTh1TH ','LaTz1TH ',
+#                'LTha1TH ','LTza1TH ','LTto1TH '
+#  filename(23) = 'DiagLAYERS-trend',
+#  frequency(23) = -15552000.0,
+#  timePhase(23) = 0.,
+#  fields(1,23) = 'LaHc1TH ', 'LaHs1TH ', 'LaHw1TH ',
+#  gad T plus surface flux
+
+#  filename(24) = 'DiagGAD-T',
+#  frequency(24) = 155520000.,
+#  fields(1:40,24)='TOTTTEND','ADVr_TH ','ADVx_TH ','ADVy_TH ',
+#               'DFrE_TH ','DFxE_TH ','DFyE_TH ','DFrI_TH ',
+#               'UTHMASS ','VTHMASS ','WTHMASS ',
+#  filename(25) = 'DiagSurf',
+#  frequency(25) = 155520000.,
+#  fields(1:2,25) =  'TFLUX   ','WTHMASS ',
+#  levels(1,25) = 1, 
+
+# diffusion
+ fields(1:8,26) = 'VISCA4D ', 'VISCAHD ', 'KPPdiffT', 
+                  'KPPviscA', 'VISrI_Um', 'VISrI_Vm',
+                   'Um_Diss ','Vm_Diss ',
+  frequency(26) = 86400.,
+  filename(26) = 'visics',
+
+# Pressure
+  fields(1:2,28)  = 'Um_dPhiX','Vm_dPhiX',
+  fileName(28) = 'pressure',
+  frequency(28) = 86400.,
+# bottom
+  fields(1:2,29)  = 'botTauX ','botTauY ',
+  fileName(29) = 'bottom',
+  frequency(29) = 86400.,
+ &
+
+  &DIAG_STATIS_PARMS
+ &

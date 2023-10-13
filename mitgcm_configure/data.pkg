@@ -1,0 +1,12 @@
+# Packages
+ &PACKAGES
+ useRBCS=.FALSE.,
+# useGMRedi=.FALSE.,
+ usePTRACERS=.TRUE.,
+ useKPP=.TRUE.,
+ useDiagnostics=.TRUE.,
+ useLayers=.TRUE.,
+#---------------------------------------
+#- for non-GM or eddy-permitting run, deactivate GMRedi package:
+# useGMRedi=.FALSE.,
+ &

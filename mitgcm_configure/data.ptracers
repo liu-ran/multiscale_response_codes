@@ -1,0 +1,28 @@
+ &PTRACERS_PARM01
+ PTRACERS_numInUse=4,
+ PTRACERS_Iter0= 5184000,
+# tracer 1 - dic
+ PTRACERS_names(1)='trac03',
+ PTRACERS_advScheme(1)=7,
+# PTRACERS_diffKh(1)=10.,
+# PTRACERS_diffK4(1)=0.E3,
+# PTRACERS_diffKr(1)=1.E-5,
+# PTRACERS_useGMRedi(1)=.FALSE.,
+# PTRACERS_useKPP(1)=.FALSE.
+ PTRACERS_initialFile(1)='tracer_initial1_Z49',
+#- use F95 syntax (to be converted with -DNML_EXTENDED_F77 if needed)
+# tracer 2
+ 
+ PTRACERS_names(2)='trac04',
+ PTRACERS_advScheme(2)=7,
+ PTRACERS_initialFile(2)='tracer_initial2_Z49',
+
+ PTRACERS_names(3)='trac05',
+ PTRACERS_advScheme(3)=7,
+ PTRACERS_initialFile(3)='tracer_initial3_Z49',
+
+ PTRACERS_names(4)='trac06',
+ PTRACERS_advScheme(4)=7,
+ PTRACERS_initialFile(4)='tracer_initial4_Z49',
+
+ &
